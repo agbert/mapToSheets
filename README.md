@@ -98,3 +98,9 @@ Install the correct version of python
   python export_places_to_sheet.py "commercial real estate agency in Sacramento CA"
   ```
 Replace the values in the string to change your search terms.
+
+You can share the spreadsheet with yourself and specific emails using the following:
+
+```zsh
+python export_places_to_sheet.py "commercial real estate agency in Sacramento CA" --share agbert@gmail.com --share jasonharnum@gmail.com --notify
+```
