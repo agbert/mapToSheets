@@ -21,7 +21,7 @@ Create a Service Account through API's & Services > Credentials > Create credent
 - Provide a description
 - Hit create and continue
 - The service account JSON will download automatically.
-- Place this file into the Keys folder in this project. 
+
 
 ## System Requirements
 
@@ -36,9 +36,9 @@ Install Homebrew
 - Start up terminal. 
 - run the following command:
 
-```zsh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+    ```zsh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 
 #### Python3
 
@@ -46,20 +46,55 @@ Install the correct version of python
 
 - run the following command in Terminal:
 
-```zsh
-brew install python
-```
+    ```zsh
+    brew install python
+    ```
 
 #### virtualenv
 
-Install virtual env so that when python runs it doesn't get in the way of the macos version of python.
+- Get the project
 
-- do this in terminal
-  - Run this to get the project from GitHub
+    ```zsh
+    git clone git@github.com:agbert/mapToSheets.git
+    ```
+
+- Change directory to the new 'mapToSheets' directory
+    - usually just 'cd mapToSheets' in Terminal
+
+- Run the following command to create the virtual env config
+
+    ```zsh
+    python3 -m venv venv
+    ```
+
+- Run the following comand to activate the virtual env.
+
+    ```zsh
+    source venv/activate
+    ```
+
+- Run the following to install all required packages.
+
+    ```zsh
+    pip install -r requirements.txt
+    ```
+
+- Place the service account json file into the keys folder under mapToSheets directory.
+
+- Edit the .env file
+
+    ```zsh
+    open -a TextEdit .env
+    ```
+
+  - Populate the GOOGLE_API_KEY value in quotes with your API Key from Google.
+  - Populate the GOOGLE_APPLICATION_CREDENTIALS value in quotes with the filename of your service account json filename.
+
+  Save the file and return to terminal
+
+### Run the script
 
   ```zsh
-  git clone ...
+  python export_places_to_sheet.py "commercial real estate agency in Sacramento CA"
   ```
-
-## Install Python Project Requirements
-
+Replace the values in the string to change your search terms.
