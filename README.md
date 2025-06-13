@@ -8,13 +8,15 @@ Enable the following API's in a project on Google Cloud Console (https://console
 - Places API (New)
 - Google Sheets API (requires a Service Account)
 - Geocoding API
+- Google Drive API
 
 Create an API Key through API's & Services > Credentials > Create credentials > API Key
 - Name the key. 
 - Ensure API Restrictions are set for:
-  - Places API, 
-  - Places API (new), and 
-  - Google Sheets API.
+  - Places API
+  - Places API (new)
+  - Google Sheets API
+  - Google Drive API
 
 Create a Service Account through API's & Services > Credentials > Create credentials > Service Account
 - Name the service account
@@ -94,13 +96,8 @@ Install the correct version of python
 
 ### Run the script
 
-  ```zsh
-  python export_places_to_sheet.py "commercial real estate agency in Sacramento CA"
-  ```
-Replace the values in the string to change your search terms.
-
 You can share the spreadsheet with yourself and specific emails using the following:
 
 ```zsh
-python export_places_to_sheet.py "commercial real estate agency in Sacramento CA" --share agbert@gmail.com --share jasonharnum@gmail.com --notify
+python export_places_to_sheet.py "commercial real estate agency in Sacramento CA" --share agbert@gmail.com:writer --share jasonharnum@gmail.com:reader --notify
 ```
